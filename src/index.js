@@ -1,17 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/*
+ * This file is part of Storm Searcher.
+ * Copyright (C) 2022 Storm Platform.
+ *
+ * Storm-Searcher is free software; you can redistribute it and/or modify it
+ * under the terms of the MIT License; see LICENSE file for more details.
+ */
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import React from 'react';
+import { render } from 'react-dom';
+
+import 'semantic-ui-css/semantic.min.css';
+import { Container } from 'semantic-ui-react';
+
+import './index.css';
+import { StormSearcher, StormHeader } from './lib';
+
+const App = () => (
+  <Container>
+    <StormHeader />
+    <div className={'search-app-container'}>
+      <StormSearcher />
+    </div>
+  </Container>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+render(<App />, document.getElementById('root'));

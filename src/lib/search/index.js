@@ -6,6 +6,4 @@
  * under the terms of the MIT License; see LICENSE file for more details.
  */
 
-.search-app-container {
-    margin-top: 8em;
-}
+export { ResultsListItem } from './ResultsListItem';
